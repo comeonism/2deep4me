@@ -10,6 +10,7 @@ public class DesktopLauncher {
 	LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 	config.width = 1024;
 	config.height = 920;
+	config.title = "To Deep Fore Me";
 	new LwjglApplication(new TDFMLevel(), config);
     }
 }
