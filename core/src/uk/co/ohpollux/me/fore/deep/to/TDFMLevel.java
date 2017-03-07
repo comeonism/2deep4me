@@ -7,6 +7,7 @@ import java.util.Random;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -41,6 +42,8 @@ public class TDFMLevel extends ApplicationAdapter {
 
     private boolean walkingRight;
 
+    private Music contemplativeMusic;
+
     @Override
     public void create() {
 	Utils.setProperties();
@@ -57,6 +60,10 @@ public class TDFMLevel extends ApplicationAdapter {
 	groundLeft = new Texture(Gdx.files.internal("images/ground.png"));
 	groundLeftPosition = new Vector2(groundMidPosition.x - groundMid.getWidth(), groundMidPosition.y);
 	dudeSpritesheet = new Texture(Gdx.files.internal("images/spritesheet.png"));
+	contemplativeMusic = Gdx.audio.newMusic(Gdx.files.internal("music/popsong.mp3"));
+	contemplativeMusic.setLooping(true);
+	contemplativeMusic.setVolume(0.5f);
+	contemplativeMusic.play();
 
 	setWalkAnimation();
 	addNewTweets(true, true);
@@ -232,6 +239,13 @@ public class TDFMLevel extends ApplicationAdapter {
     @Override
     public void dispose() {
 	batch.dispose();
+	contemplativeMusic.dispose();
+	font.dispose();
+	itsFullOfstars.dispose();
+	groundMid.dispose();
+	groundRight.dispose();
+	groundLeft.dispose();
+	dudeSpritesheet.dispose();
     }
 
     // TODO: Stop using after we're done
