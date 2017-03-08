@@ -13,4 +13,4 @@ _Assets and Stuff:_
 **Libraries:** Twitter4j, LibGDX    
 **Font used:** Inkburro (honestly purchased years ago)    
 **Graphics:** Hand drawn (as you might've guessed)    
-**Music:** Courtesy of [Squarez](https://soundcloud.com/squarez)
+**Music:** 'popsong' - courtesy of [Squarez](https://soundcloud.com/squarez)
